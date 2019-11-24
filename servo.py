@@ -36,6 +36,15 @@ class Servo():
 			time.sleep(self.delay)
 
 
+# Moves a servo once between defined positions. 
+	def slide(self,startAngle,endAngle,stepDelay):
+		self.sAngle = startAngle/15
+		self.eAngle = endAngle/15
+		self.delay = stepDelay
+		for ii in range(self.sAngle,self.eAngle):
+			self.pwm.ChangeDutyCycle(ii)
+			time.sleep(self.delay)
+
 
 if __name__ == "__main__":
 	servo1 = Servo(18)
