@@ -43,14 +43,20 @@ class Servo():
 		self.sAngle = startAngle
 		self.eAngle = endAngle
 		self.delay = stepDelay
-		for ii in range(self.sAngle,self.eAngle):
-			step = (ii*0.055)+2
-			self.pwm.ChangeDutyCycle(step)
-			time.sleep(self.delay)
+		if self.sAngle < self.eAngle:
+			for ii in range(self.sAngle,self.eAngle):
+				step = (ii*0.055)+2
+				self.pwm.ChangeDutyCycle(step)
+				time.sleep(self.delay)
+		elif self.sAngle > self.eAngle:
+			for ii in range(self.sAngle,self.eAngle,-1):
+				step = (ii*0.055)+2
+				self.pwm.ChangeDutyCycle(step)
+				time.sleep(self.delay)
 
 
 if __name__ == "__main__":
-	servo1 = Servo(18)
+	servo1 = Servo(16)
 	servo1.start(60)
 	servo1.sweep(60,120,0.05)
 	servo1.slide(0,180,0.05)
