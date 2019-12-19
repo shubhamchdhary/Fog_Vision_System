@@ -20,28 +20,28 @@ class Servo():
 
 # Sends servo rotor to specified angle.
 	def goto(self,angle):
-		self.duty = angle/15
+		self.duty = (angle*0.055)+2           #duty represents steps.
 		self.pwm.ChangeDutyCycle(self.duty)
 
 # Continuously runs servo between two angles.
-	def sweep(self,startAngle,endAngle,stepDelay): #Angles in multiples of 15 degrees
-		self.sAngle = startAngle/15
-		self.eAngle = endAngle/15
+	def sweep(self,startAngle,endAngle,stepDelay): #Angle in degree from 2 to 180.
+		self.sStep = (startAngle*0.055)+2
+		self.eStep = (endAngle*0.055)+2
 		self.delay = stepDelay
-		for i in range(self.sAngle,self.eAngle):
+		for i in range(self.sStep,self.eStep):
 			self.pwm.ChangeDutyCycle(i)
 			time.sleep(self.delay)
-		for j in range(self.eAngle,self.sAngle,-1):
+		for j in range(self.eStep,self.sStep,-1):
 			self.pwm.ChangeDutyCycle(j)
 			time.sleep(self.delay)
 
 
-# Moves a servo once between defined positions. 
+# Moves a servo once between defined positions.
 	def slide(self,startAngle,endAngle,stepDelay):
-		self.sAngle = startAngle/15
-		self.eAngle = endAngle/15
+		self.sStep = (startAngle*0.055)+2
+		self.eAngle = (endAngle*0.055)+2
 		self.delay = stepDelay
-		for ii in range(self.sAngle,self.eAngle):
+		for ii in range(self.sStep,self.eStep):
 			self.pwm.ChangeDutyCycle(ii)
 			time.sleep(self.delay)
 
