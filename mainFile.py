@@ -43,21 +43,22 @@ lst = []
 while True:
 	if step == 120:     #Checking two extreme points of up-down motion.
 		flag = 1
+		saveData(['EOS'])  #EOS stands for End Of Scan.
 	elif step == 60:
 		flag = 0
 
 	for ii in range(60,121):
-		t1 = time.time()
+#		t1 = time.time()
 		distance = tf.getData()
-		t2 = time.time()
-		print(f'time taken by tf mini {t2-t1}')
+#		t2 = time.time()
+#		print(f'time taken by tf mini {t2-t1}')
 		lst.append(str(distance))
 #		sendData(str(distance))
 		print(distance)
-		t3 = time.time()
+#		t3 = time.time()
 		yawServo.goto(ii)
-		t4 = time.time()
-		print(f'time taken by servo {t4-t3}')
+#		t4 = time.time()
+#		print(f'time taken by servo {t4-t3}')
 	saveData(lst)
 	lst.clear()
 #	sendData(lst)
@@ -74,6 +75,7 @@ while True:
 
 	if step == 120:
 		flag = 1
+		saveData(['EOF'])
 	elif step == 60:
 		flag = 0
 
@@ -83,6 +85,7 @@ while True:
 #		sendData(str(distance))
 		print(distance)
 		yawServo.goto(ii)
+	lst.reverse()
 	saveData(lst)
 	lst.clear()
 	print('Right Sweep\n')
