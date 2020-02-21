@@ -68,10 +68,8 @@ while True:
 		step += 10
 	elif flag == 1:
 		step -= 10
-	#time.sleep(10)
 	pitchServo.goto(step)
 	print('Pitch movement\n')
-	#time.sleep(100)
 
 	if step == 120:
 		flag = 1
@@ -94,7 +92,6 @@ while True:
 		step += 10
 	elif flag == 1:
 		step -= 10
-	#time.sleep(10)
+
 	pitchServo.goto(step)
 	print("Pitch movement\n")
-	#time.sleep(100)

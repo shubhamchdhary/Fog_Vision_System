@@ -23,8 +23,8 @@ class Servo():
 		self.step = (angle*0.055)+2
 		self.pwm.ChangeDutyCycle(self.step)
 
-# Continuously runs servo between two angles.
-	def sweep(self,startAngle,endAngle,stepDelay): #Angle in degree from 2 to 180.
+# Runs servo between two angles to and fro once.
+	def sweep(self,startAngle,endAngle,stepDelay): #Angle in degree from 0 to 180.
 		self.sAngle = startAngle
 		self.eAngle = endAngle
 		self.delay = stepDelay
@@ -56,8 +56,8 @@ class Servo():
 
 
 if __name__ == "__main__":
-	servo1 = Servo(16)
-	servo1.start(60)
+	servo1 = Servo(18)
+	servo1.start(50)
 	servo1.sweep(60,120,0.05)
 	servo1.slide(0,180,0.05)
 
