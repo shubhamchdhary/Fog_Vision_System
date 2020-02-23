@@ -49,18 +49,12 @@ while True:
 		flag = 0
 
 	for ii in range(60,120):
-#		t1 = time.time()
 		distance = tf.getData()
-#		t2 = time.time()
-#		print(f'time taken by tf mini {t2-t1}')
 		lst.append(str(distance))
 #		sendData(str(distance))
 		print(distance)
-#		t3 = time.time()
 		yawServo.update(ii)
 		time.sleep(stepDelay)
-#		t4 = time.time()
-#		print(f'time taken by servo {t4-t3}')
 	saveData(lst)
 	del lst[:]
 #	sendData(lst)
@@ -70,10 +64,9 @@ while True:
 		step += inr
 	elif flag == 1:
 		step -= inr
-	#time.sleep(10)
+
 	pitchServo.update(step)
 	print('Pitch movement\n')
-	#time.sleep(100)
 
 	if step == 120:
 		flag = 1
@@ -97,7 +90,5 @@ while True:
 		step += inr
 	elif flag == 1:
 		step -= inr
-	#time.sleep(10)
 	pitchServo.update(step)
 	print("Pitch movement\n")
-	#time.sleep(100)
