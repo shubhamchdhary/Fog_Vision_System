@@ -6,10 +6,10 @@ import servo,tfmini,time
 from csv import writer
 
 tf = tfmini.Tfmini()
-yawServo = servo.Servo(16) #Attach yaw servo at pin 16.
-yawServo.start(50) #Start pwm at 50 Hz.
-pitchServo = servo.Servo(18) #Attach pitch servo at pin 18.
-pitchServo.start(50)
+yawServo = servo.Servo(16) #Attachs yaw servo at pin 16.
+yawServo.start(40) #Starts pwm at 50 Hz.
+pitchServo = servo.Servo(18) #Attachs pitch servo at pin 18.
+pitchServo.start(40)
 
 #sc = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #Starts server.
 #sc.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
@@ -33,12 +33,11 @@ def saveData(data): #Saves data in a csv file. Argument 'data' is a list.
 #	clientSocket.send(bytes(data,"utf-8"))
 #	sc.shutdown(socket.SHUT_WR)
 #	sc.close()
-#	tj = time.time()
-#	print(f'time taken in data sending {tj-ti}')
 
-step = 60  #Initial position of pitch control servo.
-flag = 0   # Flag to check up or down motion. '0' for downward and '1' for upward.
+step = 60  # Initial position of pitch control servo.
+flag = 0   # Flag to check 'up' or 'down' motion. '0' for downward and '1' for upward.
 lst = []
+inr = 10   # Increament in step of pitch servo. Modify this variable to increase or decrease rows of data.csv
 
 while True:
 	if step == 120:     #Checking two extreme points of up-down motion.
@@ -48,32 +47,26 @@ while True:
 		flag = 0
 
 	for ii in range(60,121):
-#		t1 = time.time()
 		distance = tf.getData()
-#		t2 = time.time()
-#		print(f'time taken by tf mini {t2-t1}')
 		lst.append(str(distance))
 #		sendData(str(distance))
 		print(distance)
-#		t3 = time.time()
 		yawServo.goto(ii)
-#		t4 = time.time()
-#		print(f'time taken by servo {t4-t3}')
+		time.sleep(0.05)
 	saveData(lst)
 	lst.clear()
-#	sendData(lst)
 	print('Left Sweep\n')
 
 	if flag == 0:
-		step += 10
+		step += inr
 	elif flag == 1:
-		step -= 10
+		step -= inr
 	pitchServo.goto(step)
 	print('Pitch movement\n')
 
 	if step == 120:
 		flag = 1
-		saveData(['EOF'])
+		saveData(['EOS'])
 	elif step == 60:
 		flag = 0
 
@@ -83,15 +76,16 @@ while True:
 #		sendData(str(distance))
 		print(distance)
 		yawServo.goto(ii)
+		time.sleep(0.05)
 	lst.reverse()
 	saveData(lst)
 	lst.clear()
 	print('Right Sweep\n')
 
 	if flag == 0:
-		step += 10
+		step += inr
 	elif flag == 1:
-		step -= 10
-
+		step -= inr
 	pitchServo.goto(step)
 	print("Pitch movement\n")
+
