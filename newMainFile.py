@@ -1,13 +1,13 @@
 #This is the actual file for operating both the servos and tfmini.
 
 #Yaw means lef-right motion and Pitch means up-down motion here.
-import myservoblaster,tfmini,time
+import myservoblaster,tfmini,time,os
 #import socket
 from csv import writer
 
 tf = tfmini.Tfmini()
-yawServo = myservoblaster.ServoBlaster(17) #Attachs yaw servo at pin 16.
-pitchServo = myservoblaster.ServoBlaster(18) #Attachs pitch servo at pin 18.
+yawServo = myservoblaster.ServoBlaster(17) #Attachs yaw servo at GPIO pin 17.
+pitchServo = myservoblaster.ServoBlaster(18) #Attachs pitch servo at GPIO pin 18.
 
 #sc = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #Starts server.
 #sc.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
@@ -18,6 +18,7 @@ def saveData(data): #Saves data in a csv file. Argument 'data' is a list.
 	with open('data.csv','a') as f:
 		csvW = writer(f)
 		csvW.writerow(data)
+		f.close()
 
 
 #def sendData(data):
@@ -38,13 +39,21 @@ def saveData(data): #Saves data in a csv file. Argument 'data' is a list.
 step = 60  # Initial position of pitch control servo.
 flag = 0   # Flag to check 'up' or 'down' motion. '0' for downward and '1' for upward.
 lst = []
-stepDelay = 0.001  #step delay of yawServo
-inr = 10   # Increament in step of pitch servo. Modify this variable to increase or decrease rows of data.csv
+stepDelay = 0.00001  #step delay of yawServo
+inr = 5   # Increament in step of pitch servo. Modify this variable to increase or decrease rows of data.csv
 
 while True:
+
 	if step == 120:     #Checking two extreme points of up-down motion.
 		flag = 1
-		saveData(['EOS'])  #EOS stands for End Of Scan.
+#		saveData(['EOS'])  #EOS stands for End Of Scan.
+		with open('finished.txt','w') as f:
+			print('finished.txt created')
+			f.close()
+		while os.path.exists('sync.txt') != True:
+			print('Holding for sync.')
+			time.sleep(0.0001)
+		os.remove('sync.txt')
 	elif step == 60:
 		flag = 0
 
@@ -54,7 +63,7 @@ while True:
 #		sendData(str(distance))
 		print(distance)
 		yawServo.update(ii)
-		time.sleep(stepDelay)
+#		time.sleep(stepDelay)
 	saveData(lst)
 	del lst[:]
 #	sendData(lst)
@@ -70,17 +79,25 @@ while True:
 
 	if step == 120:
 		flag = 1
-		saveData(['EOS'])
+#		saveData(['EOS'])
+		with open('finished.txt','w') as f:
+			print('finished.txt created')
+			f.close()
+		while os.path.exists('sync.txt') != True:
+			print('Holding for sync.')
+			time.sleep(0.0001)
+		os.remove('sync.txt')
+
 	elif step == 60:
 		flag = 0
 
-	for ii in range(120,61,-1):
+	for ii in range(120,60,-1):
 		distance = tf.getData()
 		lst.append(str(distance))
 #		sendData(str(distance))
 		print(distance)
 		yawServo.update(ii)
-		time.sleep(stepDelay)
+#		time.sleep(stepDelay)
 	lst.reverse()
 	saveData(lst)
 	del lst[:]
