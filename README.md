@@ -1,4 +1,7 @@
 # Fog Vision System
+This project aims at developing a system capable of providing a view of forthcoming objects to an automobile driver in foggy or unclear weather condition and even at night. The project uses LIDAR (Tf Mini Plus with 850nm IR Light) as its main sensor for fog penetration and Raspberry Pi 3B+ as the computing unit. 
+
+More details available in Project Report : https://drive.google.com/file/d/1vYBo0ckk718FwpUBV0SaPBexlutJoTjd/view?usp=sharing
 
 #servo.py
 This file has a class defined for operating servos. It also has different methods for controlling servos.
@@ -20,4 +23,16 @@ This file contains distance data in comma separated values.
 
 #Lidar_view.py
 Has program to read csv file and produce image from the point cloud data in it. 
+
+Interaction between Scanning Program (mainFile.py) and Plotting Program(Lidar_view.py)::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Block%20Diagram.PNG)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Setup ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Lidar%20view%20new.PNG)    
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Output :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Setup.jpg?raw=true)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
