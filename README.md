@@ -29,10 +29,10 @@ Interaction between Scanning Program (mainFile.py) and Plotting Program(Lidar_vi
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Setup ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Lidar%20view%20new.PNG)    
+![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Setup.jpg)    
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Output :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Setup.jpg?raw=true)
+![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Lidar%20view%20new.PNG)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
