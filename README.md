@@ -26,14 +26,14 @@ This file contains distance data in comma separated values.
 Has program to read csv file and produce image from the point cloud data in it. 
 
 Interaction between Scanning Program (mainFile.py) and Plotting Program(Lidar_view.py)::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Block%20Diagram.PNG)
+![](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Block%20Diagram.PNG)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Setup ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Setup.jpg)    
+![](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Setup.jpg)    
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Output :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Lidar%20view%20new.PNG)
+![](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/master/Images/Lidar%20view%20new.PNG)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
