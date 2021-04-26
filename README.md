@@ -1,7 +1,7 @@
 # Fog Vision System
 This project aims at developing a system capable of providing a view of forthcoming objects to an automobile driver in foggy or unclear weather condition and even at night. The project uses LIDAR (Tf Mini Plus with 850nm IR Light) as its main sensor for fog penetration and Raspberry Pi 3B+ as the computing unit. 
 
-More detail available in Project Report : https://drive.google.com/file/d/1vYBo0ckk718FwpUBV0SaPBexlutJoTjd/view?usp=sharing
+More details available in Project Report : https://drive.google.com/file/d/1vYBo0ckk718FwpUBV0SaPBexlutJoTjd/view?usp=sharing
 
 #servo.py
 This file has a class defined for operating servos. It also has different methods for controlling servos.
