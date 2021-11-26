@@ -25,7 +25,7 @@ This file contains distance data in comma separated values.
 Has program to read csv file and produce image from the point cloud data in it. 
 
 Interaction between Scanning Program (mainFile.py) and Plotting Program(Lidar_view.py)\
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ![alt text](https://github.com/shubhamchaudharybrg/Fog_Vision_System/blob/3fec3c44644f564389e287f406caa6f43b919315/Images/Block%20Diagram.PNG)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
